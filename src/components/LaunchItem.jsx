@@ -1,4 +1,5 @@
 import { HiCalendar } from "react-icons/hi"
+import { Link } from "react-router-dom"
 
 export function LaunchItem(launch) {
   return (
@@ -17,9 +18,12 @@ export function LaunchItem(launch) {
         <span className="text-xs flex items-center">
           <HiCalendar className="mr-1 text-gray-400" /> <span className="text-gray-400">{launch.launch_date_local.split('T'[0])}</span>               
         </span>
-        <div className="bg-violet-400 text-white font-sans text-sm w-28 h-8 rounded flex items-center mt-2 justify-center">
-          <a>More Details</a>
-        </div>
+        <Link to={`/launch/${launch.flight_number}`}>
+          <div className="bg-violet-400 text-white font-sans text-sm w-28 h-8 rounded flex items-center mt-2 justify-center">
+            More Details
+          </div>
+        </Link>
+        
       </div>
 
     </li>

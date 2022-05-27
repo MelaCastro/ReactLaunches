@@ -13,9 +13,9 @@ export async function getAllLaunches() {
   }
 }
 
-export async function getAllLaunchByFlightNumber(flightNumber) {
+export async function getDataLaunch(Route,Id) {
   try {
-    const response = await fetch(`${API_URL}/launches/${flightNumber}`)
+    const response = await fetch(`${API_URL}/${Route}/${Id}`)
     const data = await response.json()
     return data
     
@@ -23,3 +23,4 @@ export async function getAllLaunchByFlightNumber(flightNumber) {
     console.error(error)
   }
 }
+

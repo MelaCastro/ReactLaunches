@@ -9,6 +9,9 @@ module.exports = {
         'roboto' : ['Roboto'],
         'sans': ['Helvetica', 'Arial', 'sans-serif'],
       },
+      colors: {
+        'regal-blue': '#1f5288',
+      },
     },
   },
   plugins: [],

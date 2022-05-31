@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import * as API from '../services/launches'
 import { HiLink } from "react-icons/hi"
-import homePicture from '../assets/homePicture.jpeg'
+import detailsPicture from '../assets/detailsPicture.jpeg'
 
 
 export function LaunchDetails() {
@@ -15,20 +15,16 @@ export function LaunchDetails() {
 
   return(
     <>
-    
-      <li className="bg-slate-200 h-24 rounded flex items-center">
-        <span className={`relative left-3/4 right-0 rounded w-32 h-9 text-sm flex items-center justify-center
-          ${launch.launch_success ? 'bg-green-300' : 'bg-red-300'}`}>
-           {launch.launch_success ? 'Success' : 'Failure'}
-        </span>
-        
-        <div className="flex flex-col ">
-          <span className="text-lg">
-            Mission <span className="font-sans">{launch.mission_name}</span> ({launch.launch_year})
+    <img className=" h-full absolute w-full" src={detailsPicture} />
+      <li className=" h-24 rounded flex items-center ml-16">
+        <div className=" relative flex text-lg">
+          <span className="text-white">Mission</span> <span className="font-sans text-white">{launch.mission_name}</span> <span className="text-white">({launch.launch_year})</span>
+          <span className={`relative left-10 rounded w-32 h-9 text-sm flex items-center justify-center border
+            ${launch.launch_success ? 'border-green-300 text-green-300' : 'border-red-300 text-red-300'}`}>
+            {launch.launch_success ? 'Success' : 'Failure'}
           </span>
         </div>
       </li>
-      <img className=" h-full absolute w-full" src={homePicture} />
       <div className=" max-w-screen-lg leading-10 text-white relative top-48 text-lg font-roboto">
         <li className="list-none ml-16">
           <ul className="text-gray-400"> <span className="text-slate-100">Rocket </span> {""}

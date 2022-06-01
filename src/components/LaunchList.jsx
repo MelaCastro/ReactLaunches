@@ -14,14 +14,22 @@ export function LaunchList() {
   return(
     <>
     <img className="h-full fixed w-full" src={homePicture} /> 
-    <nav>
+    <nav className="relative flex items-center justify-between mx-8 ">
       <img className="mb-16 inset-5 relative" src={logo} width={300}/>
+      <ul className="text-white">
+        <a href="" className="mr-3.5">Dragons</a>
+        <a href="" className="mr-3.5">Launch Pads</a>
+        <a href="" className="mr-3.5">Landing Pads</a>
+        <a href="" className="mr-3.5">Company Info</a>
+      </ul>
     </nav>
-      <ul className="container mx-auto">
+    <div className="max-w-screen-2xl mx-auto"> 
+      <ul className="">
         {launches.map(launch => (
           <LaunchItem key={launch.flight_number} {...launch}/>
         ))}
       </ul>
+    </div>
     </>
   )
 }

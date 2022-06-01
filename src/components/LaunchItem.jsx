@@ -6,7 +6,7 @@ export function LaunchItem(launch) {
   return (
     <>
     <br />
-    <li className=" my-3 h-24 flex items-center relative text-white">
+    <li className="flex items-center relative text-white">
       <span className={`relative left-3/4 rounded w-20 h-9 text-sm flex items-center justify-center border
         ${launch.launch_success ? 'border-green-300 text-green-300' : 'border-red-300 text-red-300'}`}>
           {launch.launch_success ? 'Success' : 'Failure'}
